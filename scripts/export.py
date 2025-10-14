@@ -85,13 +85,6 @@ MLEB_DATASETS = [
         link="https://huggingface.co/datasets/isaacus/gdpr-holdings-retrieval",
     ),
     MLEBDataset(
-        id="uk-legislative-long-titles",
-        name="UK Legislative Long Titles",
-        creator="Isaacus",
-        category=MLEBDatasetDocumentCategory.REGULATORY,
-        link="https://huggingface.co/datasets/isaacus/uk-legislative-long-titles",
-    ),
-    MLEBDataset(
         id="australian-tax-guidance-retrieval",
         name="Australian Tax Guidance Retrieval",
         creator="Isaacus",
@@ -104,6 +97,13 @@ MLEB_DATASETS = [
         creator="Isaacus",
         category=MLEBDatasetDocumentCategory.REGULATORY,
         link="https://huggingface.co/datasets/isaacus/irish-legislative-summaries",
+    ),
+    MLEBDataset(
+        id="uk-legislative-long-titles",
+        name="UK Legislative Long Titles",
+        creator="Isaacus",
+        category=MLEBDatasetDocumentCategory.REGULATORY,
+        link="https://huggingface.co/datasets/isaacus/uk-legislative-long-titles",
     ),
     MLEBDataset(
         id="contractual-clause-retrieval",
