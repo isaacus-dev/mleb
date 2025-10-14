@@ -341,6 +341,12 @@ def _get_mteb_evaluator(model_config: MLEBEvaluationModelConfig) -> torch.nn.Mod
 
                         if "show_progress_bar" in kwargs:
                             kwargs["show_progress_bar"] = False
+                                                
+                        if model_config.encode_kwargs_remap:
+                            for (key, value) in model_config.encode_kwargs_remap:
+                                if key in kwargs and kwargs[key] == value:
+                                    kwargs.pop(key)
+                                    kwargs.update(model_config.encode_kwargs_remap[(key, value)])
 
                         with torch.inference_mode(), autocast:
                             emb: np.ndarray | torch.Tensor = original_encode(*args, **kwargs)
