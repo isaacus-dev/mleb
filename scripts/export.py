@@ -306,16 +306,6 @@ MLEB_MODELS = [
         name="Gemini Embedding",
         provider=MLEB_MODEL_PROVIDERS["google"],
         open_source=False,
-        embedding_dimensions=1024,
-        context_window=512,
-        link="https://ai.google.dev/gemini-api/docs/embeddings",
-    ),
-    # | Google
-    MLEBModel(
-        id="google/gemini-embedding-001",
-        name="Gemini Embedding",
-        provider=MLEB_MODEL_PROVIDERS["google"],
-        open_source=False,
         embedding_dimensions=3072,
         context_window=8_192,
         link="https://developers.googleblog.com/en/gemini-embedding-available-gemini-api/",
