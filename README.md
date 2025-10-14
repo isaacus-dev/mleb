@@ -3,6 +3,8 @@ The [**Massive Legal Embedding Benchmark (MLEB)**](https://isaacus.com/mleb) by 
 
 This repository contains the code used to evaluate embedding models on MLEB (available in the [`scripts`](./scripts/) directory), as well as the full results of evaluated models (available in the [`results`](./results/) directory).
 
+If you're looking for MLEB itself, you can find it [here](https://isaacus.com/mleb).
+
 ## Setup
 We recommend setting up a virtual environment for this project and installing necessary dependencies using [`uv`](https://docs.astral.sh/uv/) like so:
 
