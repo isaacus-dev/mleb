@@ -9,7 +9,7 @@ from helpers import save_jsonl
 
 
 class MLEBDatasetDocumentCategory(Enum):
-    LEGISLATIVE = "Legislation"
+    REGULATORY = "Regulation"
     JUDICIAL = "Caselaw"
     CONTRACTUAL = "Contracts"
 
@@ -88,21 +88,21 @@ MLEB_DATASETS = [
         id="housing-qa",
         name="Housing QA",
         creator="Stanford University",
-        category=MLEBDatasetDocumentCategory.LEGISLATIVE,
+        category=MLEBDatasetDocumentCategory.REGULATORY,
         link="https://huggingface.co/datasets/isaacus/mleb-housing-qa",
     ),
     MLEBDataset(
         id="australian-tax-guidance-retrieval",
         name="Australian Tax Guidance Retrieval",
         creator="Isaacus",
-        category=MLEBDatasetDocumentCategory.LEGISLATIVE,
+        category=MLEBDatasetDocumentCategory.REGULATORY,
         link="https://huggingface.co/datasets/isaacus/australian-tax-guidance-retrieval",
     ),
     MLEBDataset(
         id="irish-legislative-summaries",
         name="Irish Legislative Summaries",
         creator="Isaacus",
-        category=MLEBDatasetDocumentCategory.LEGISLATIVE,
+        category=MLEBDatasetDocumentCategory.REGULATORY,
         link="https://huggingface.co/datasets/isaacus/irish-legislative-summaries",
     ),
     MLEBDataset(
