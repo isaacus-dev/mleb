@@ -85,11 +85,11 @@ MLEB_DATASETS = [
         link="https://huggingface.co/datasets/isaacus/gdpr-holdings-retrieval",
     ),
     MLEBDataset(
-        id="housing-qa",
-        name="Housing QA",
-        creator="Stanford University",
+        id="uk-legislative-long-titles",
+        name="UK Legislative Long Titles",
+        creator="Isaacus",
         category=MLEBDatasetDocumentCategory.REGULATORY,
-        link="https://huggingface.co/datasets/isaacus/mleb-housing-qa",
+        link="https://huggingface.co/datasets/isaacus/uk-legislative-long-titles",
     ),
     MLEBDataset(
         id="australian-tax-guidance-retrieval",

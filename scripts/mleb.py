@@ -77,9 +77,9 @@ EVALUATION_DATASET_CONFIGS = (
         revision="8d41f3d22bb73685b6f42b62ad95940ea3dfbf84",
     ),
     MLEBEvaluationDatasetConfig(
-        name="housing-qa",
-        id="isaacus/mleb-housing-qa",
-        revision="66d23b0ce609450ce24d0fc85e9bac69aba90b84",
+        name="uk-legislative-long-titles",
+        id="isaacus/uk-legislative-long-titles",
+        revision="436d6a79d06cac556799e9e0be54a6fb90bf7182",
     ),
     MLEBEvaluationDatasetConfig(
         name="australian-tax-guidance-retrieval",
