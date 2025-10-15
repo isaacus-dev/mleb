@@ -30,6 +30,8 @@ MODEL_IDS = [
     "voyage-3.5",
     "voyage-3.5-lite",
     "voyage-law-2",
+    # | Jina
+    "jinaai/jina-embeddings-v4",
     # | Qwen
     "Qwen/Qwen3-Embedding-0.6B",
     "Qwen/Qwen3-Embedding-4B",

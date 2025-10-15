@@ -179,7 +179,7 @@ MLEB_MODEL_PROVIDERS = [
     ),
     MLEBModelProvider(
         id="voyageai",
-        name="Voyage AI",
+        name="Voyage",
         link="https://voyageai.com/",
         logo="https://media.isaacus.com/third-parties/icons/voyage.png",
     ),
@@ -188,6 +188,12 @@ MLEB_MODEL_PROVIDERS = [
         name="Mixedbread",
         link="https://www.mixedbread.com/",
         logo="https://media.isaacus.com/third-parties/icons/mixedbread.png",
+    ),
+    MLEBModelProvider(
+        id="jinaai",
+        name="Jina",
+        link="http://jina.ai/",
+        logo="https://media.isaacus.com/third-parties/icons/jina.png",
     ),
 ]
 
@@ -384,6 +390,16 @@ MLEB_MODELS = [
         embedding_dimensions=384,
         context_window=8_192,
         link="https://huggingface.co/ibm-granite/granite-embedding-small-english-r2",
+    ),
+    # | Jina
+    MLEBModel(
+        id="jinaai/jina-embeddings-v4",
+        name="Jina Embeddings v4",
+        provider=MLEB_MODEL_PROVIDERS["jinaai"],
+        open_source=False,
+        embedding_dimensions=2048,
+        context_window=32_768,
+        link="https://huggingface.co/jinaai/jina-embeddings-v4",
     ),
 ]
 

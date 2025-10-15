@@ -34,6 +34,22 @@ MODEL_CONFIGS = [
             "loader": None,
         },
     ),
+    # | Jina
+    MLEBEvaluationModelConfig(
+        id="jinaai/jina-embeddings-v4",
+        provider="jinaai",
+        model_framework="sentence-transformer",
+        model_type="embedder",
+        batch_size=1,
+        dtype="bfloat16",
+        mteb_metadata=None,
+        trust_remote_code=True,
+        encode_kwargs_remap={
+            ("prompt", "Query: "): {"task": "retrieval", "prompt_name": "query"},
+            ("prompt", "Passage: "): {"task": "retrieval", "prompt_name": "passage"},
+            ("prompt", ""): {"task": "retrieval", "prompt_name": "passage"},
+        },
+    ),
     # | Qwen
     MLEBEvaluationModelConfig(
         id="Qwen/Qwen3-Embedding-0.6B",
