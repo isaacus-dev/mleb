@@ -63,7 +63,7 @@ This project is licensed under the [MIT License](./LICENSE).
   title={Massive Legal Embedding Benchmark (MLEB)},
   author={Umar Butler and Abdur-Rahman Butler},
   year={2025},
-  url={https://isaacus.com/massive-legal-embedding-benchmark-mleb},
+  url={https://isaacus.com/blog/introducing-mleb},
   publisher={Isaacus}
 }
 ```
