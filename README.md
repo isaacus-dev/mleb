@@ -1,9 +1,9 @@
 # Massive Legal Embedding Benchmark (MLEB)
-The [**Massive Legal Embedding Benchmark (MLEB)**](https://isaacus.com/mleb) by [Isaacus](https://isaacus.com/) is the largest, most diverse, and most comprehensive benchmark for legal text embedding models. It contains 10 datasets spanning multiple document types, jurisdictions, areas of law, and tasks. To do well on MLEB, embedding models must demonstrate both extensive legal domain knowledge and strong legal reasoning skills.
+The [**Massive Legal Embedding Benchmark (MLEB)**](https://isaacus.com/massive-legal-embedding-benchmark-mleb) by [Isaacus](https://isaacus.com/) is the largest, most diverse, and most comprehensive benchmark for legal text embedding models. It contains 10 datasets spanning multiple document types, jurisdictions, areas of law, and tasks. To do well on MLEB, embedding models must demonstrate both extensive legal domain knowledge and strong legal reasoning skills.
 
 This repository contains the code used to evaluate embedding models on MLEB (available in the [`scripts`](./scripts/) directory), as well as the full results of evaluated models (available in the [`results`](./results/) directory).
 
-If you're looking for MLEB itself, you can find it [here](https://isaacus.com/mleb).
+If you're looking for MLEB itself, you can find it [here](https://isaacus.com/massive-legal-embedding-benchmark-mleb).
 
 ## Setup
 We recommend setting up a virtual environment for this project and installing necessary dependencies using [`uv`](https://docs.astral.sh/uv/) like so:
@@ -52,7 +52,18 @@ New models may be added by adding new `MLEBEvaluationModelConfig` instances (def
 
 Results are written in the [`mteb`](https://github.com/embeddings-benchmark/mteb) format to the [`results`](./results) directory.
 
-[`scripts/export.py`](./scripts/export.py) may be run to pack all results into a single JSONL file available at [`results/results.jsonl`](./results/results.jsonl). That file is used to dynamically present the latest benchmark results on the [MLEB website](https://isaacus.com/mleb).
+[`scripts/export.py`](./scripts/export.py) may be run to pack all results into a single JSONL file available at [`results/results.jsonl`](./results/results.jsonl). That file is used to dynamically present the latest benchmark results on the [MLEB website](https://isaacus.com/massive-legal-embedding-benchmark-mleb).
 
 ## License
 This project is licensed under the [MIT License](./LICENSE).
+
+## Citation
+```bibtex
+@misc{mleb-2025,
+  title={Massive Legal Embedding Benchmark (MLEB)},
+  author={Umar Butler and Abdur-Rahman Butler},
+  year={2025},
+  url={https://isaacus.com/massive-legal-embedding-benchmark-mleb},
+  publisher={Isaacus}
+}
+```
