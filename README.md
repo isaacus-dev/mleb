@@ -1,5 +1,5 @@
 # Massive Legal Embedding Benchmark (MLEB)
-The [**Massive Legal Embedding Benchmark (MLEB)**](https://isaacus.com/massive-legal-embedding-benchmark-mleb) by [Isaacus](https://isaacus.com/) is the largest, most diverse, and most comprehensive benchmark for legal text embedding models. It contains 10 datasets spanning multiple document types, jurisdictions, areas of law, and tasks. To do well on MLEB, embedding models must demonstrate both extensive legal domain knowledge and strong legal reasoning skills.
+The [**Massive Legal Embedding Benchmark (MLEB)**](https://isaacus.com/mleb) by [Isaacus](https://isaacus.com/) is the largest, most diverse, and most comprehensive benchmark for legal text embedding models. It contains 10 datasets spanning multiple document types, jurisdictions, areas of law, and tasks. To do well on MLEB, embedding models must demonstrate both extensive legal domain knowledge and strong legal reasoning skills.
 
 This repository contains the code used to evaluate embedding models on MLEB (available in the [`scripts`](./scripts/) directory), as well as the full results of evaluated models (available in the [`results`](./results/) directory).
 
