@@ -161,7 +161,7 @@ MODEL_CONFIGS = [
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
-        batch_size=16,
+        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata=requests.get(
             "https://raw.githubusercontent.com/embeddings-benchmark/results/refs/heads/main/results/voyageai__voyage-3-large/1/model_meta.json"
         ).json()
@@ -172,7 +172,7 @@ MODEL_CONFIGS = [
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
-        batch_size=16,
+        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata={
             "name": "voyageai/voyage-3.5",
             "revision": "1",
@@ -201,7 +201,7 @@ MODEL_CONFIGS = [
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
-        batch_size=16,
+        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata={
             "name": "voyageai/voyage-3.5-lite",
             "revision": "1",
