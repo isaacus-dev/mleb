@@ -52,7 +52,7 @@ New models may be added by adding new `MLEBEvaluationModelConfig` instances (def
 
 Results are written in the [`mteb`](https://github.com/embeddings-benchmark/mteb) format to the [`results`](./results) directory.
 
-[`scripts/export.py`](./scripts/export.py) may be run to pack all results into a single JSONL file available at [`results/results.jsonl`](./results/results.jsonl). That file is used to dynamically present the latest benchmark results on the [MLEB website](https://isaacus.com/massive-legal-embedding-benchmark-mleb).
+[`scripts/export.py`](./scripts/export.py) may be run to pack all results into a single JSONL file available at [`results/results.jsonl`](./results/results.jsonl). That file is used to dynamically present the latest benchmark results on the [MLEB website](https://isaacus.com/mleb).
 
 ## License
 This project is licensed under the [MIT License](./LICENSE).
