@@ -38,7 +38,7 @@ Issues = "https://github.com/isaacus-dev/mleb/issues"
 Source = "https://github.com/isaacus-dev/mleb"
 
 [tool.uv.sources]
-mteb = { git = "https://github.com/embeddings-benchmark/mteb.git" }
+mteb = { git = "https://github.com/embeddings-benchmark/mteb.git#721e8a34743c050179ee5e9093ed24ee7ab37fba" }
 
 [tool.ruff]
 exclude = [
