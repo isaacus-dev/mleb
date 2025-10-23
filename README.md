@@ -3,7 +3,7 @@ The [**Massive Legal Embedding Benchmark (MLEB)**](https://isaacus.com/mleb) by 
 
 This repository contains the code used to evaluate embedding models on MLEB (available in the [`scripts`](./scripts/) directory), as well as the full results of evaluated models (available in the [`results`](./results/) directory).
 
-If you're looking for MLEB itself, you can find it [here](https://isaacus.com/massive-legal-embedding-benchmark-mleb).
+If you're looking for MLEB itself, you can find it [here](https://isaacus.com/massive-legal-embedding-benchmark-mleb). You can also read our paper [here](https://arxiv.org/abs/2510.19365).
 
 ## Setup
 We recommend setting up a virtual environment for this project and installing necessary dependencies using [`uv`](https://docs.astral.sh/uv/) like so:
@@ -59,11 +59,13 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ## Citation
 ```bibtex
-@misc{mleb-2025,
-  title={Massive Legal Embedding Benchmark (MLEB)},
-  author={Umar Butler and Abdur-Rahman Butler},
-  year={2025},
-  url={https://isaacus.com/blog/introducing-mleb},
-  publisher={Isaacus}
+@misc{butler2025massivelegalembeddingbenchmark,
+      title={The Massive Legal Embedding Benchmark (MLEB)}, 
+      author={Umar Butler and Abdur-Rahman Butler and Adrian Lucas Malec},
+      year={2025},
+      eprint={2510.19365},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.19365}, 
 }
 ```
