@@ -55,7 +55,7 @@ MODEL_IDS = [
     # | IBM
     "ibm-granite/granite-embedding-english-r2",
     "ibm-granite/granite-embedding-small-english-r2",
-    # | Freelaw
+    # | Free Law
     "freelawproject/modernbert-embed-base_finetune_512",
 ]
 
