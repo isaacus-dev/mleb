@@ -55,6 +55,8 @@ MODEL_IDS = [
     # | IBM
     "ibm-granite/granite-embedding-english-r2",
     "ibm-granite/granite-embedding-small-english-r2",
+    # | Freelaw
+    "freelawproject/modernbert-embed-base_finetune_512",
 ]
 
 EVALUATION_DATASET_CONFIGS = (

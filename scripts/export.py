@@ -195,6 +195,12 @@ MLEB_MODEL_PROVIDERS = [
         link="http://jina.ai/",
         logo="https://media.isaacus.com/third-parties/icons/jina.png",
     ),
+    MLEBModelProvider(
+        id="freelawproject",
+        name="FreeLaw Project",
+        link="https://free.law/",
+        logo="https://media.isaacus.com/third-parties/icons/freelaw.png",
+    )
 ]
 
 MLEB_MODEL_PROVIDERS = {p.id: p for p in MLEB_MODEL_PROVIDERS}
@@ -400,6 +406,16 @@ MLEB_MODELS = [
         embedding_dimensions=2048,
         context_window=32_768,
         link="https://huggingface.co/jinaai/jina-embeddings-v4",
+    ),
+    # | Freelaw
+    MLEBModel(
+        id="freelawproject/modernbert-embed-base_finetune_512",
+        name="FreeLaw ModernBERT Base",
+        provider=MLEB_MODEL_PROVIDERS["freelawproject"],
+        open_source=True,
+        embedding_dimensions=768,
+        context_window=8_192,
+        link="https://huggingface.co/freelawproject/modernbert-embed-base_finetune_512",
     ),
 ]
 

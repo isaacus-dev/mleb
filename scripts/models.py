@@ -289,6 +289,16 @@ MODEL_CONFIGS = [
         mteb_metadata=None,
         amp_dtype="bfloat16",
     ),
+    # | Freelaw
+    MLEBEvaluationModelConfig(
+        id="freelawproject/modernbert-embed-base_finetune_512",
+        provider="huggingface",
+        model_framework="sentence-transformer",
+        model_type="embedder",
+        batch_size=1,
+        amp_dtype="bfloat16",
+        mteb_metadata=None,
+    ),
 ]
 
 MODEL_CONFIGS = {model_config.id: model_config for model_config in MODEL_CONFIGS}
