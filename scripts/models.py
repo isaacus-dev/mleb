@@ -116,7 +116,7 @@ MODEL_CONFIGS = [
         model_type="embedder",
         batch_size=16,
         mteb_metadata=requests.get(
-            "https://raw.githubusercontent.com/embeddings-benchmark/results/refs/heads/main/results/google__gemini-embedding-001/1/model_meta.json"
+            "https://raw.githubusercontent.com/embeddings-benchmark/results/9d2ba387423b389c7a43b365af5477901b839a8b/results/google__gemini-embedding-001/1/model_meta.json"
         ).json(),
     ),
     MLEBEvaluationModelConfig(
@@ -157,13 +157,100 @@ MODEL_CONFIGS = [
     ),
     # | Voyage
     MLEBEvaluationModelConfig(
-        id="voyage-3-large",
+        id="voyage-4-large",
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
         batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
+        mteb_metadata={
+            "name": "voyageai/voyage-4-large",
+            "revision": "1",
+            "release_date": "2026-01-15",
+            "languages": None,
+            "n_parameters": None,
+            "memory_usage_mb": None,
+            "max_tokens": 32000.0,
+            "embed_dim": 1024,
+            "license": None,
+            "open_weights": None,
+            "public_training_data": None,
+            "public_training_code": None,
+            "framework": ["API"],
+            "reference": "https://blog.voyageai.com/2026/01/15/voyage-4/",
+            "similarity_fn_name": "cosine",
+            "use_instructions": None,
+            "training_datasets": None,
+            "adapted_from": None,
+            "superseded_by": None,
+            "loader": None,
+        },
+    ),
+    MLEBEvaluationModelConfig(
+        id="voyage-4",
+        provider="voyage",
+        model_framework="langchain",
+        model_type="embedder",
+        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
+        mteb_metadata={
+            "name": "voyageai/voyage-4",
+            "revision": "1",
+            "release_date": "2026-01-15",
+            "languages": None,
+            "n_parameters": None,
+            "memory_usage_mb": None,
+            "max_tokens": 32000.0,
+            "embed_dim": 1024,
+            "license": None,
+            "open_weights": None,
+            "public_training_data": None,
+            "public_training_code": None,
+            "framework": ["API"],
+            "reference": "https://blog.voyageai.com/2026/01/15/voyage-4/",
+            "similarity_fn_name": "cosine",
+            "use_instructions": None,
+            "training_datasets": None,
+            "adapted_from": None,
+            "superseded_by": None,
+            "loader": None,
+        },
+    ),
+    MLEBEvaluationModelConfig(
+        id="voyage-4-lite",
+        provider="voyage",
+        model_framework="langchain",
+        model_type="embedder",
+        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
+        mteb_metadata={
+            "name": "voyageai/voyage-4-lite",
+            "revision": "1",
+            "release_date": "2026-01-15",
+            "languages": None,
+            "n_parameters": None,
+            "memory_usage_mb": None,
+            "max_tokens": 32000.0,
+            "embed_dim": 1024,
+            "license": None,
+            "open_weights": None,
+            "public_training_data": None,
+            "public_training_code": None,
+            "framework": ["API"],
+            "reference": "https://blog.voyageai.com/2026/01/15/voyage-4/",
+            "similarity_fn_name": "cosine",
+            "use_instructions": None,
+            "training_datasets": None,
+            "adapted_from": None,
+            "superseded_by": None,
+            "loader": None,
+        },
+    ),
+    MLEBEvaluationModelConfig(
+        id="voyage-3-large",
+        provider="voyage",
+        model_framework="langchain",
+        model_type="embedder",
+        batch_size=16,  # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata=requests.get(
-            "https://raw.githubusercontent.com/embeddings-benchmark/results/refs/heads/main/results/voyageai__voyage-3-large/1/model_meta.json"
+            "https://raw.githubusercontent.com/embeddings-benchmark/results/9d2ba387423b389c7a43b365af5477901b839a8b/results/voyageai__voyage-3-large/1/model_meta.json"
         ).json()
         | {"loader": None},
     ),
@@ -172,7 +259,7 @@ MODEL_CONFIGS = [
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
-        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
+        batch_size=16,  # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata={
             "name": "voyageai/voyage-3.5",
             "revision": "1",
@@ -201,7 +288,7 @@ MODEL_CONFIGS = [
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
-        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
+        batch_size=16,  # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata={
             "name": "voyageai/voyage-3.5-lite",
             "revision": "1",
@@ -232,7 +319,7 @@ MODEL_CONFIGS = [
         model_type="embedder",
         batch_size=16,
         mteb_metadata=requests.get(
-            "https://raw.githubusercontent.com/embeddings-benchmark/results/refs/heads/main/results/voyageai__voyage-law-2/1/model_meta.json"
+            "https://raw.githubusercontent.com/embeddings-benchmark/results/9d2ba387423b389c7a43b365af5477901b839a8b/results/voyageai__voyage-law-2/1/model_meta.json"
         ).json()
         | {"loader": None},
     ),
@@ -244,7 +331,7 @@ MODEL_CONFIGS = [
         model_type="embedder",
         batch_size=16,
         mteb_metadata=requests.get(
-            "https://raw.githubusercontent.com/embeddings-benchmark/results/refs/heads/main/results/openai__text-embedding-3-large/1/model_meta.json"
+            "https://raw.githubusercontent.com/embeddings-benchmark/results/9d2ba387423b389c7a43b365af5477901b839a8b/results/openai__text-embedding-3-large/1/model_meta.json"
         ).json()
         | {"loader": None},
     ),
@@ -255,7 +342,7 @@ MODEL_CONFIGS = [
         model_type="embedder",
         batch_size=16,
         mteb_metadata=requests.get(
-            "https://raw.githubusercontent.com/embeddings-benchmark/results/refs/heads/main/results/openai__text-embedding-3-small/1/model_meta.json"
+            "https://raw.githubusercontent.com/embeddings-benchmark/results/9d2ba387423b389c7a43b365af5477901b839a8b/results/openai__text-embedding-3-small/1/model_meta.json"
         ).json()
         | {"loader": None},
     ),
@@ -266,7 +353,7 @@ MODEL_CONFIGS = [
         model_type="embedder",
         batch_size=16,
         mteb_metadata=requests.get(
-            "https://raw.githubusercontent.com/embeddings-benchmark/results/refs/heads/main/results/openai__text-embedding-ada-002/2/model_meta.json"
+            "https://raw.githubusercontent.com/embeddings-benchmark/results/9d2ba387423b389c7a43b365af5477901b839a8b/results/openai__text-embedding-ada-002/2/model_meta.json"
         ).json()
         | {"loader": None},
     ),

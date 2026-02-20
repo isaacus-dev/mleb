@@ -57,6 +57,13 @@ class MLEBModelReport(msgspec.Struct):
 
 MLEB_DATASETS = [
     MLEBDataset(
+        id="legal-rag-bench",
+        name="Legal RAG Bench",
+        creator="Isaacus",
+        category=MLEBDatasetDocumentCategory.JUDICIAL,
+        link="https://huggingface.co/datasets/isaacus/legal-rag-bench",
+    ),
+    MLEBDataset(
         id="bar-exam-qa",
         name="Bar Exam QA",
         creator="Stanford University",
@@ -69,6 +76,13 @@ MLEB_DATASETS = [
         creator="Faiz Surani and Varun Iyer",
         category=MLEBDatasetDocumentCategory.JUDICIAL,
         link="https://huggingface.co/datasets/isaacus/mleb-scalr",
+    ),
+    MLEBDataset(
+        id="echr-retrieval",
+        name="ECHR Retrieval",
+        creator="Isaacus",
+        category=MLEBDatasetDocumentCategory.JUDICIAL,
+        link="https://huggingface.co/datasets/isaacus/echr-retrieval",
     ),
     MLEBDataset(
         id="singaporean-judicial-keywords",
@@ -200,7 +214,7 @@ MLEB_MODEL_PROVIDERS = [
         name="Free Law",
         link="https://free.law/",
         logo="https://media.isaacus.com/third-parties/icons/freelaw.png",
-    )
+    ),
 ]
 
 MLEB_MODEL_PROVIDERS = {p.id: p for p in MLEB_MODEL_PROVIDERS}
@@ -218,6 +232,33 @@ MLEB_MODELS = [
         link="https://docs.isaacus.com/models/introduction#embedding",
     ),
     # | Voyage
+    MLEBModel(
+        id="voyageai/voyage-4-large",
+        name="Voyage 4 Large",
+        provider=MLEB_MODEL_PROVIDERS["voyageai"],
+        open_source=False,
+        embedding_dimensions=1024,
+        context_window=32_000,
+        link="https://blog.voyageai.com/2026/01/15/voyage-4/",
+    ),
+    MLEBModel(
+        id="voyageai/voyage-4",
+        name="Voyage 4",
+        provider=MLEB_MODEL_PROVIDERS["voyageai"],
+        open_source=False,
+        embedding_dimensions=1024,
+        context_window=32_000,
+        link="https://blog.voyageai.com/2026/01/15/voyage-4/",
+    ),
+    MLEBModel(
+        id="voyageai/voyage-4-lite",
+        name="Voyage 4 Lite",
+        provider=MLEB_MODEL_PROVIDERS["voyageai"],
+        open_source=False,
+        embedding_dimensions=1024,
+        context_window=32_000,
+        link="https://blog.voyageai.com/2026/01/15/voyage-4/",
+    ),
     MLEBModel(
         id="voyageai/voyage-3-large",
         name="Voyage 3 Large",

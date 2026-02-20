@@ -3,6 +3,7 @@ import os
 import logging
 import itertools
 
+from pathlib import Path
 from contextlib import nullcontext
 
 import mteb
@@ -26,6 +27,9 @@ MODEL_IDS = [
     # | Isaacus
     "kanon-2-embedder",
     # | Voyage
+    "voyage-4-large",
+    "voyage-4",
+    "voyage-4-lite",
     "voyage-3-large",
     "voyage-3.5",
     "voyage-3.5-lite",
@@ -61,6 +65,11 @@ MODEL_IDS = [
 
 EVALUATION_DATASET_CONFIGS = (
     MLEBEvaluationDatasetConfig(
+        name="legal-rag-bench",
+        id="isaacus/mleb-legal-rag-bench",
+        revision="ca0f1732432ad623ba6172b15e8c726b76e50fad",
+    ),
+    MLEBEvaluationDatasetConfig(
         name="bar-exam-qa",
         id="isaacus/mteb-barexam-qa",
         revision="dd157bbfa479359488c656981e3999da6f42e4e9",
@@ -69,6 +78,11 @@ EVALUATION_DATASET_CONFIGS = (
         name="scalr",
         id="isaacus/mleb-scalr",
         revision="319b6cc4b012d733f126a943a8a66bdf9df5dc40",
+    ),
+    MLEBEvaluationDatasetConfig(
+        name="echr-retrieval",
+        id="isaacus/echr-retrieval",
+        revision="f5452494f09a6d51c37b56883a65ef742ac07c99",
     ),
     MLEBEvaluationDatasetConfig(
         name="singaporean-judicial-keywords",
@@ -345,9 +359,9 @@ def _get_mteb_evaluator(model_config: MLEBEvaluationModelConfig) -> torch.nn.Mod
 
                         if "show_progress_bar" in kwargs:
                             kwargs["show_progress_bar"] = False
-                                                
+
                         if model_config.encode_kwargs_remap:
-                            for (key, value) in model_config.encode_kwargs_remap:
+                            for key, value in model_config.encode_kwargs_remap:
                                 if key in kwargs and kwargs[key] == value:
                                     kwargs.pop(key)
                                     kwargs.update(model_config.encode_kwargs_remap[(key, value)])
@@ -379,7 +393,7 @@ def _get_mteb_evaluator(model_config: MLEBEvaluationModelConfig) -> torch.nn.Mod
 def evaluate_model(
     model_config: MLEBEvaluationModelConfig,
     dataset_configs: list[MLEBEvaluationDatasetConfig] = EVALUATION_DATASET_CONFIGS,
-    output_dir: str | None = "results",
+    output_dir: str | None = str(Path(__file__).parent.parent / "results"),
     progress: bool = True,
 ) -> dict[str, dict[str, float]]:
     """Evaluate a model on the MLEB evaluation datasets.
@@ -387,7 +401,7 @@ def evaluate_model(
     Args:
         model_config: The model to evaluate.
         dataset_configs: The datasets to evaluate on. Defaults to all MLEB evaluation datasets.
-        output_dir: The directory to save the results to. If None, results are not saved. Defaults to 'results'.
+        output_dir: The directory to save the results to. If None, results are not saved. Defaults a folder named 'results' in the parent folder containing this script.
 
     Returns:
         A dictionary mapping dataset names to their evaluation results.
