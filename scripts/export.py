@@ -440,6 +440,24 @@ MLEB_MODELS = [
     ),
     # | Jina
     MLEBModel(
+        id="jinaai/jina-embeddings-v5-text-small",
+        name="Jina Embeddings v5 Text Small",
+        provider=MLEB_MODEL_PROVIDERS["jinaai"],
+        open_source=True,
+        embedding_dimensions=1_024,
+        context_window=32_768,
+        link="https://huggingface.co/jinaai/jina-embeddings-v5-text-small",
+    ),
+    MLEBModel(
+        id="jinaai/jina-embeddings-v5-text-nano",
+        name="Jina Embeddings v5 Text Nano",
+        provider=MLEB_MODEL_PROVIDERS["jinaai"],
+        open_source=True,
+        embedding_dimensions=768,
+        context_window=32_768,
+        link="https://huggingface.co/jinaai/jina-embeddings-v5-text-nano",
+    ),
+    MLEBModel(
         id="jinaai/jina-embeddings-v4",
         name="Jina Embeddings v4",
         provider=MLEB_MODEL_PROVIDERS["jinaai"],

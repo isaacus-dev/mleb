@@ -36,8 +36,40 @@ MODEL_CONFIGS = [
     ),
     # | Jina
     MLEBEvaluationModelConfig(
-        id="jinaai/jina-embeddings-v4",
+        id="jinaai/jina-embeddings-v5-text-small",
         provider="jinaai",
+        model_framework="sentence-transformer",
+        model_type="embedder",
+        batch_size=8,
+        dtype="bfloat16",
+        mteb_metadata=None,
+        trust_remote_code=True,
+        encode_kwargs={"task": "retrieval"},
+        encode_kwargs_remap={
+            ("prompt", "Query: "): {"task": "retrieval", "prompt_name": "query"},
+            ("prompt", "Passage: "): {"task": "retrieval", "prompt_name": "passage"},
+            ("prompt", ""): {"task": "retrieval", "prompt_name": "passage"},
+        },
+    ),
+    MLEBEvaluationModelConfig(
+        id="jinaai/jina-embeddings-v5-text-nano",
+        provider="huggingface",
+        model_framework="sentence-transformer",
+        model_type="embedder",
+        batch_size=8,
+        dtype="bfloat16",
+        mteb_metadata=None,
+        trust_remote_code=True,
+        encode_kwargs={"task": "retrieval"},
+        encode_kwargs_remap={
+            ("prompt", "Query: "): {"task": "retrieval", "prompt_name": "query"},
+            ("prompt", "Passage: "): {"task": "retrieval", "prompt_name": "passage"},
+            ("prompt", ""): {"task": "retrieval", "prompt_name": "passage"},
+        },
+    ),
+    MLEBEvaluationModelConfig(
+        id="jinaai/jina-embeddings-v4",
+        provider="huggingface",
         model_framework="sentence-transformer",
         model_type="embedder",
         batch_size=1,
@@ -161,7 +193,7 @@ MODEL_CONFIGS = [
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
-        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
+        batch_size=16,  # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata={
             "name": "voyageai/voyage-4-large",
             "revision": "1",
@@ -190,7 +222,7 @@ MODEL_CONFIGS = [
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
-        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
+        batch_size=16,  # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata={
             "name": "voyageai/voyage-4",
             "revision": "1",
@@ -219,7 +251,7 @@ MODEL_CONFIGS = [
         provider="voyage",
         model_framework="langchain",
         model_type="embedder",
-        batch_size=16, # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
+        batch_size=16,  # NOTE due to Voyage's token limits, I had to set `batch_size` to 1 for the Singaporean Judicial Keywords, GDPR Holdings and Irish Legislative Summaries datasets due to their lengths.
         mteb_metadata={
             "name": "voyageai/voyage-4-lite",
             "revision": "1",

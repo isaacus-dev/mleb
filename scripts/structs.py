@@ -44,6 +44,13 @@ class MLEBEvaluationModelConfig(msgspec.Struct):
 
     trust_remote_code: bool = False
     """Whether to trust remote code when loading the model. Defaults to `False`."""
+    
+    encode_kwargs: dict[str, Any] | None = None
+    """Keyword arguments to pass to the model's `encode` method when encoding sentences.
+    
+    This parameter is most useful for models requiring custom keyword arguments to be passed, for example, `jinaai/jina-embeddings-v5-text-small` (which requires setting a custom `task` argument).
+    
+    Currently, this parameter can only be used with `sentence-transformer` models."""
 
     encode_kwargs_remap: dict[tuple[str, Any], dict[str, Any]] | None = None
     """A mapping of keyword arguments (formatted as `(key, value)` tuples) of the model's `encode` method to replacement arguments.
@@ -61,3 +68,6 @@ class MLEBEvaluationModelConfig(msgspec.Struct):
 
         if self.encode_kwargs_remap and self.model_framework != "sentence-transformer":
             raise ValueError("`encode_kwargs_remap` can only be set if the model framework is `sentence-transformer`.")
+        
+        if self.encode_kwargs and self.model_framework != "sentence-transformer":
+            raise ValueError("`encode_kwargs` can only be set if the model framework is `sentence-transformer`.")

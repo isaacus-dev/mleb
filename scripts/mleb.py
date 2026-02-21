@@ -24,43 +24,45 @@ logger = logging.getLogger(__name__)
 
 MODEL_IDS = [
     # Embedders
-    # | Isaacus
-    "kanon-2-embedder",
-    # | Voyage
-    "voyage-4-large",
-    "voyage-4",
-    "voyage-4-lite",
-    "voyage-3-large",
-    "voyage-3.5",
-    "voyage-3.5-lite",
-    "voyage-law-2",
+    # # | Isaacus
+    # "kanon-2-embedder",
+    # # | Voyage
+    # "voyage-4-large",
+    # "voyage-4",
+    # "voyage-4-lite",
+    # "voyage-3-large",
+    # "voyage-3.5",
+    # "voyage-3.5-lite",
+    # "voyage-law-2",
     # | Jina
-    "jinaai/jina-embeddings-v4",
-    # | Qwen
-    "Qwen/Qwen3-Embedding-0.6B",
-    "Qwen/Qwen3-Embedding-4B",
-    "Qwen/Qwen3-Embedding-8B",
-    # | BGE
-    "BAAI/bge-m3",
-    # | Microsoft
-    "intfloat/multilingual-e5-large-instruct",
-    # | Mixedbread
-    "mixedbread-ai/mxbai-embed-large-v1",
-    # | Google
-    "models/gemini-embedding-001",
-    "google/embeddinggemma-300m",
-    # | Snowflake
-    "Snowflake/snowflake-arctic-embed-l-v2.0",
-    "Snowflake/snowflake-arctic-embed-m-v2.0",
-    # | OpenAI
-    "text-embedding-3-large",
-    "text-embedding-3-small",
-    "text-embedding-ada-002",
-    # | IBM
-    "ibm-granite/granite-embedding-english-r2",
-    "ibm-granite/granite-embedding-small-english-r2",
-    # | Free Law
-    "freelawproject/modernbert-embed-base_finetune_512",
+    "jinaai/jina-embeddings-v5-text-small",
+    "jinaai/jina-embeddings-v5-text-nano",
+    # "jinaai/jina-embeddings-v4",
+    # # | Qwen
+    # "Qwen/Qwen3-Embedding-0.6B",
+    # "Qwen/Qwen3-Embedding-4B",
+    # "Qwen/Qwen3-Embedding-8B",
+    # # | BGE
+    # "BAAI/bge-m3",
+    # # | Microsoft
+    # "intfloat/multilingual-e5-large-instruct",
+    # # | Mixedbread
+    # "mixedbread-ai/mxbai-embed-large-v1",
+    # # | Google
+    # "models/gemini-embedding-001",
+    # "google/embeddinggemma-300m",
+    # # | Snowflake
+    # "Snowflake/snowflake-arctic-embed-l-v2.0",
+    # "Snowflake/snowflake-arctic-embed-m-v2.0",
+    # # | OpenAI
+    # "text-embedding-3-large",
+    # "text-embedding-3-small",
+    # "text-embedding-ada-002",
+    # # | IBM
+    # "ibm-granite/granite-embedding-english-r2",
+    # "ibm-granite/granite-embedding-small-english-r2",
+    # # | Free Law
+    # "freelawproject/modernbert-embed-base_finetune_512",
 ]
 
 EVALUATION_DATASET_CONFIGS = (
@@ -354,6 +356,9 @@ def _get_mteb_evaluator(model_config: MLEBEvaluationModelConfig) -> torch.nn.Mod
                         *args,
                         **kwargs,
                     ) -> np.ndarray | torch.Tensor:
+                        if model_config.encode_kwargs:
+                            kwargs = model_config.encode_kwargs | kwargs
+                        
                         if model_config.batch_size:
                             kwargs["batch_size"] = model_config.batch_size
 
