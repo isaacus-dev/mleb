@@ -13,16 +13,16 @@ dependencies = [
     "langchain-openai>=0.3.32",
     "langchain-voyageai>=0.1.7",
     "msgspec>=0.19.0",
-    "mteb==1.38.49",
+    "mteb==1.39.7",
     "numpy>=2.3.2",
     "peft>=0.17.1",
     "pillow>=11.3.0",
     "python-dotenv>=1.1.1",
     "requests>=2.32.5",
-    "sentence-transformers>=5.1.0",
+    "sentence-transformers>=5.1.2",
     "torch>=2.8.0",
     "torchvision>=0.23.0",
-    "transformers>=4.55.4",
+    "transformers>=4.55.4<5.0.0",
     "xformers>=0.0.32.post2",
 ]
 
@@ -38,7 +38,7 @@ Issues = "https://github.com/isaacus-dev/mleb/issues"
 Source = "https://github.com/isaacus-dev/mleb"
 
 [tool.uv.sources]
-mteb = { git = "https://github.com/embeddings-benchmark/mteb.git#721e8a34743c050179ee5e9093ed24ee7ab37fba" }
+mteb = { git = "https://github.com/embeddings-benchmark/mteb.git", rev = "721e8a34743c050179ee5e9093ed24ee7ab37fba" }
 
 [tool.ruff]
 exclude = [
