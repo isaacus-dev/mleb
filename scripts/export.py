@@ -356,7 +356,7 @@ MLEB_MODELS = [
     # | Google
     MLEBModel(
         id="google/gemini-embedding-001",
-        name="Gemini Embedding",
+        name="Gemini Embedding 001",
         provider=MLEB_MODEL_PROVIDERS["google"],
         open_source=False,
         embedding_dimensions=3072,
